@@ -1,0 +1,89 @@
+" ================================
+" Firegold Vim Config (Complete)
+" ================================
+
+" --- General ---
+set nocompatible
+filetype plugin indent on
+syntax on
+set encoding=utf-8
+set backspace=indent,eol,start
+set hidden                   " Allow switching buffers without saving
+set mouse=a                  " Enable mouse
+set clipboard=unnamedplus    " Use system clipboard
+set history=1000
+set undofile                 " Persistent undo
+set updatetime=300           " Faster updates (for CursorHold etc.)
+set ttyfast                  " Faster scrolling
+
+" --- File Handling ---
+set nobackup                 " No backup files
+set nowritebackup
+set noswapfile               " Disable swap files
+
+" --- UI / Appearance ---
+set number
+set relativenumber
+set cursorline
+set showmatch
+set scrolloff=8
+set display=lastline
+set nowrap
+set signcolumn=yes
+set termguicolors
+set showcmd
+set showmode
+
+" Highlight current search, then remove with <leader>h
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+nnoremap <leader>h :nohlsearch<CR>
+
+" --- Command Line & Completion ---
+set wildmenu
+set wildmode=list:longest,full
+set wildignorecase
+set completeopt=menuone,noselect   " Completion menu settings
+set pumheight=10                   " Limit popup menu height
+
+" --- Tabs & Indentation ---
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set smarttab
+
+" --- Splits ---
+set splitbelow
+set splitright
+
+" --- Folding ---
+set foldmethod=syntax
+set foldlevel=99
+
+" --- Status Line ---
+set laststatus=2
+set statusline=%#StatusLine#\ %f\ %y\ %m%r%=%#StatusLineNC#\ [%l:%c]\ %p%%
+
+" --- Whitespace Visualization ---
+set list
+set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+
+
+" --- Better Match Highlighting ---
+set matchtime=2
+
+" --- Save Cursor Position on Reopen ---
+augroup remember_cursor
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   execute "normal! g`\"" |
+    \ endif
+augroup END
+
+" --- Theme ---
+colorscheme firegold
+
