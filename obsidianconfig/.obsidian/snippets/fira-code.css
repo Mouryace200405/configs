@@ -1,0 +1,260 @@
+:root {
+  /* Fonts */
+  --font-interface: 'JetBrains Mono', 'Fira Code', 'Cascadia Mono', monospace;
+  --font-text: 'JetBrains Mono', 'Fira Code', 'Cascadia Mono', monospace;
+  --font-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Mono', monospace;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Tokyo Night Colors */
+  --bg-primary: #1a1b26;
+  --bg-secondary: #16161e;
+  --text-primary: #c0caf5;
+  --text-secondary: #a9b1d6;
+  --accent-color: #7aa2f7;
+  --accent-purple: #bb9af7;
+  --accent-pink: #ff9e64;
+  --accent-green: #9ece6a;
+  --border-color: #2a2d3e;
+  --error-color: #f7768e;
+
+  /* Responsive font sizes */
+  --font-size-base: 16px;
+  --font-size-heading: 24px;
+}
+
+/* ===== Base Styles ===== */
+body {
+  font-family: var(--font-interface);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ===== Workspace ===== */
+.workspace-leaf-content {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.view-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ===== Editor and Preview ===== */
+.cm-editor,
+.markdown-preview-view {
+  font-family: var(--font-interface);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.cm-line {
+  font-family: var(--font-monospace);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+/* ===== Syntax Highlighting ===== */
+.cm-keyword {
+  color: var(--accent-purple) !important;
+}
+
+.cm-string {
+  color: var(--accent-green) !important;
+}
+
+.cm-number {
+  color: var(--accent-pink) !important;
+}
+
+.cm-comment {
+  color: var(--text-secondary) !important;
+  font-style: italic;
+}
+
+/* ===== Scrollbars ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #569cd6;
+}
+
+/* ===== Callouts ===== */
+.callout {
+  border-left: 4px solid var(--accent-color);
+  background-color: rgba(122, 162, 247, 0.1);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+.callout-title {
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color);
+}
+
+/* ===== Blockquotes ===== */
+.blockquote {
+  border-left: 4px solid var(--accent-purple);
+  background-color: rgba(187, 154, 247, 0.05);
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-style: italic;
+}
+
+/* ===== Lists ===== */
+ul,
+ol {
+  margin: 8px 0 8px 20px;
+  padding: 0;
+}
+
+li {
+  margin: 4px 0;
+  color: var(--text-secondary);
+}
+
+/* ===== Task Lists ===== */
+.task-list-item {
+  margin: 4px 0;
+}
+
+.task-list-indicator {
+  border: 1px solid var(--accent-purple);
+  background-color: var(--bg-secondary);
+}
+
+.task-list-item.is-checked .task-list-indicator {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+/* ===== Tables ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  font-family: var(--font-interface);
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color);
+}
+
+/* ===== Headings ===== */
+.cm-header-1,
+.markdown-preview-view h1 {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-bold);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  font-size: var(--font-size-heading);
+}
+
+.cm-header-2,
+.markdown-preview-view h2 {
+  color: var(--accent-purple);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+}
+
+.cm-header-3,
+.markdown-preview-view h3 {
+  color: var(--accent-pink);
+  font-size: 18px;
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--accent-pink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footnotes ===== */
+.footnotes {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  margin-top: 24px;
+}
+
+.footnote-backlink {
+  color: var(--accent-purple);
+}
+
+/* ===== Inline and Multiline Code Blocks ===== */
+.cm-inline-code {
+  background-color: rgba(122, 162, 247, 0.2);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-family: var(--font-monospace);
+}
+
+.cm-gutters {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+/* ===== Images and Embeds ===== */
+img,
+iframe,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+}
+
+/* ===== Mobile-Specific Tweaks ===== */
+@media (max-width: 768px) {
+  .workspace-leaf-content,
+  .markdown-preview-view,
+  .cm-editor {
+    padding: 8px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}

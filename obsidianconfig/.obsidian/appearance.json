@@ -1,0 +1,13 @@
+{
+  "baseFontSize": 24,
+  "accentColor": "#a094ff",
+  "interfaceFontFamily": "JetBrainsMono Nerd Font Mono,FiraCode Nerd Font Mono,Cascadia Mono",
+  "textFontFamily": "JetBrainsMono Nerd Font Mono,FiraCode Nerd Font Mono,Cascadia Mono",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font Mono,FiraCode Nerd Font Mono,Cascadia Mono",
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": [
+    "fira-code",
+    "increase-font-weight"
+  ],
+  "nativeMenus": false
+}
